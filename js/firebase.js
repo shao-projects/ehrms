@@ -22,11 +22,11 @@ console.log("Firebase Connected");
 // Reference sa sensors
 const sensorRef = ref(db, "ehrms/sensors");
 
-// Basahin ang data nang real-time
+// Basahin ang sensors value
 onValue(sensorRef, (snapshot) => {
 
-    const data = snapshot.val();
+    console.log("Snapshot exists:", snapshot.exists());
 
-    console.log(data);
+    console.log("Snapshot value:", snapshot.val());
 
 });
