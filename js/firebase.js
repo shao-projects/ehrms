@@ -120,14 +120,12 @@ document.getElementById("startBtn").addEventListener("click", () => {
 // ===============================
 // OUTPUT STATUS
 // ===============================
-
 const outputRef = ref(db, "ehrms/outputs");
-
 onValue(outputRef, (snapshot) => {
-
     const out = snapshot.val();
     if (!out) return;
-    console.group("OUTPUTS");
+
+    console.group("⚙ OUTPUTS");
     console.table(out);
     console.groupEnd();
 
@@ -135,6 +133,6 @@ onValue(outputRef, (snapshot) => {
     document.getElementById("stopBtn").classList.toggle("active", out.stop);
     document.getElementById("releaseBtn").classList.toggle("active", out.release);
     document.getElementById("drainBtn").classList.toggle("active", out.drain);
-    document.getElementById("emergencyBtn") .classList.toggle("active", out.emergency);
+    document.getElementById("emergencyBtn").classList.toggle("active", out.emergency);
 
 });
