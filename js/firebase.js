@@ -65,7 +65,7 @@ onValue(statusRef, (snapshot) => {
 
     deviceStatus.textContent = "DEVICE ONLINE";
 
-    statusDot.style.background = "#00ff66";
+    statusDot.style.background = "red";
 
     statusDot.style.animation = "none";
 
