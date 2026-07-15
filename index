@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>EHRMS - Electrochemical Heavy Metal Recovery Monitoring System</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">
+
+<i class="fa-solid fa-water"></i>
+
+<h1>EHRMS</h1>
+
+<p>Electrochemical Heavy Metal Recovery Monitoring System</p>
+
+</div>
+
+<div class="status">
+
+<span class="online"></span>
+
+ONLINE
+
+</div>
+
+</header>
+
+<div class="container">
+
+<!-- SENSOR SECTION -->
+
+<section class="cards">
+
+<div class="card">
+
+<h3>pH</h3>
+
+<h2 id="ph">7.00</h2>
+
+</div>
+
+<div class="card">
+
+<h3>TDS</h3>
+
+<h2 id="tds">0 ppm</h2>
+
+</div>
+
+<div class="card">
+
+<h3>Turbidity</h3>
+
+<h2 id="turbidity">0 NTU</h2>
+
+</div>
+
+<div class="card">
+
+<h3>Voltage</h3>
+
+<h2 id="voltage">0.00 V</h2>
+
+</div>
+
+<div class="card">
+
+<h3>Current</h3>
+
+<h2 id="current">0.00 A</h2>
+
+</div>
+
+<div class="card">
+
+<h3>Power</h3>
+
+<h2 id="power">0.00 W</h2>
+
+</div>
+
+</section>
+
+<!-- TREATMENT STATUS -->
+
+<section class="panel">
+
+<h2>Treatment Status</h2>
+
+<div class="progress">
+
+<div id="progressBar"></div>
+
+</div>
+
+<p id="treatmentStatus">
+
+READY
+
+</p>
+
+</section>
+
+<!-- CONTROL PANEL -->
+
+<section class="controls">
+
+<h2>Control Panel</h2>
+
+<button id="startBtn">
+
+<i class="fa-solid fa-play"></i>
+
+START
+
+</button>
+
+<button id="stopBtn">
+
+<i class="fa-solid fa-stop"></i>
+
+STOP
+
+</button>
+
+<button id="releaseBtn">
+
+<i class="fa-solid fa-droplet"></i>
+
+RELEASE WATER
+
+</button>
+
+<button id="drainBtn">
+
+<i class="fa-solid fa-filter-circle-xmark"></i>
+
+DRAIN SLUDGE
+
+</button>
+
+<button id="emergencyBtn">
+
+<i class="fa-solid fa-triangle-exclamation"></i>
+
+EMERGENCY STOP
+
+</button>
+
+</section>
+
+<!-- DEVICE STATUS -->
+
+<section class="device">
+
+<h2>Device Status</h2>
+
+<ul>
+
+<li>WiFi : <span id="wifi">Connected</span></li>
+
+<li>Firebase : <span id="firebase">Connected</span></li>
+
+<li>Electrochemical : <span id="electro">OFF</span></li>
+
+<li>Valve : <span id="valve">Closed</span></li>
+
+<li>Turbine : <span id="turbine">Idle</span></li>
+
+</ul>
+
+</section>
+
+<!-- SYSTEM LOG -->
+
+<section class="logs">
+
+<h2>System Log</h2>
+
+<div id="logBox">
+
+Waiting for data...
+
+</div>
+
+</section>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
