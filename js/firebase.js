@@ -44,9 +44,15 @@ const sensorRef = ref(db, "ehrms/sensors");
 onValue(sensorRef, (snapshot) => {
 
     const data = snapshot.val();
-    console.log(data);
-
     if (!data) return;
+
+    console.group("📡 SENSORS");
+    console.table(data);
+    console.groupEnd();
+
+    console.group("OUTPUTS");
+    console.table(out);
+    console.groupEnd();
     
 
     document.getElementById("ph").textContent = data.ph;
