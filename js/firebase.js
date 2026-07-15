@@ -145,18 +145,24 @@ onValue(outputRef, (snapshot) => {
 const processRef = ref(db, "ehrms/process");
 
 onValue(processRef, (snapshot)=>{
-
     const process = snapshot.val();
-
     if(!process) return;
 
-    document.getElementById("treatmentStatus").textContent =
-    process.state;
+    document.getElementById("treatmentStatus").textContent = process.state;
+    document.getElementById("progressBar").style.width = process.progress + "%";
+    document.getElementById("progressText").textContent = process.progress + "%";
 
-    document.getElementById("progressBar").style.width =
-    process.progress + "%";
+});
 
-    document.getElementById("progressText").textContent =
-    process.progress + "%";
+// ===============================
+// SYSTEM LOGS
+// ===============================
 
+const logRef = ref(db,"ehrms/logs");
+onValue(logRef,(snapshot)=>{
+    const log=snapshot.val();
+    if(!log) return;
+    
+    document.getElementById("logBox").innerHTML=
+    log.last;
 });
