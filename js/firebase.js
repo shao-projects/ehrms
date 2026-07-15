@@ -103,6 +103,7 @@ const controlRef = ref(db, "ehrms/control");
 // ===============================
 // SEND COMMAND
 // ===============================
+
 function sendCommand(command){
 
     update(controlRef,{
@@ -115,36 +116,52 @@ function sendCommand(command){
 
         [command]: true
 
-    });
+    })
+    .then(() => {
 
-    console.log(command.toUpperCase() + " COMMAND SENT");
+        console.log(command.toUpperCase() + " COMMAND SENT");
+
+    })
+    .catch((error) => {
+
+        console.error("COMMAND ERROR:", error);
+
+    });
 }
 
+// ===============================
+// BUTTON EVENTS
+// ===============================
 
 // START
 document.getElementById("startBtn").addEventListener("click", () => {
-sendCommand("start");
+    sendCommand("start");
+
+    if (SIMULATION_MODE) {
+        startSimulation();
+    }
 });
 
 // STOP
 document.getElementById("stopBtn").addEventListener("click", () => {
-sendCommand("stop");
+    sendCommand("stop");
 });
 
 // RELEASE WATER
 document.getElementById("releaseBtn").addEventListener("click", () => {
-sendCommand("release");
-
+    sendCommand("release");
 });
+
 // DRAIN SLUDGE
 document.getElementById("drainBtn").addEventListener("click", () => {
-sendCommand("drain");
-
+    sendCommand("drain");
 });
+
 // EMERGENCY STOP
 document.getElementById("emergencyBtn").addEventListener("click", () => {
-sendCommand("emergency");
-});  
+    sendCommand("emergency");
+});
+
 
 // ===============================
 // OUTPUT STATUS
