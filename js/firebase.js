@@ -77,6 +77,12 @@ onValue(statusRef, (snapshot) => {
 
     statusDot.style.animation = "blink 1s infinite";
 
-}
+// ===============================
+// CONTROL REFERENCE
+// ===============================
 
+const controlRef = ref(db, "ehrms/control");
+
+
+ } 
 });
