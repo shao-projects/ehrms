@@ -61,20 +61,22 @@ onValue(statusRef, (snapshot) => {
     const deviceStatus = document.getElementById("deviceStatus");
     const statusDot = document.getElementById("statusDot");
 
-    if (status.online) {
+   if (status.online) {
 
-        deviceStatus.textContent = "DEVICE ONLINE";
+    deviceStatus.textContent = "DEVICE ONLINE";
 
-        statusDot.style.background = "#00ff66";
+    statusDot.style.background = "#00ff66";
 
-    } else {
+    statusDot.style.animation = "none";
 
-        deviceStatus.textContent = "DEVICE NOT CONNECTED";
+} else {
 
-        statusDot.style.background = "#ffc107";
+    deviceStatus.textContent = "DEVICE NOT CONNECTED";
 
-    }
+    statusDot.style.background = "red";
 
-}); 
+    statusDot.style.animation = "blink 1s infinite";
+
+}
 
 });
