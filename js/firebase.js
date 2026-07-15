@@ -33,7 +33,6 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 const db = getDatabase(app);
-
 console.log("Firebase Connected");
 
 
@@ -42,14 +41,12 @@ console.log("Firebase Connected");
 // ===============================
 
 const sensorRef = ref(db, "ehrms/sensors");
-
 onValue(sensorRef, (snapshot) => {
 
     const data = snapshot.val();
 
     if (!data) return;
     
-    console.log(data);
 
     document.getElementById("ph").textContent = data.ph;
 
@@ -135,30 +132,19 @@ document.getElementById("startBtn").addEventListener("click", () => {
 // ===============================
 // OUTPUT STATUS
 // ===============================
+
 const outputRef = ref(db, "ehrms/outputs");
+
 onValue(outputRef, (snapshot) => {
 
     const out = snapshot.val();
-    console.log("OUTPUT DATA:", out);
+
     if (!out) return;
 
-const btn = document.getElementById("startBtn");
-if (out.start === true) {
-
-    btn.style.background = "lime";
-    btn.style.boxShadow = "0 0 60px lime";
-    btn.style.color = "black";
-
-} else {
-
-    btn.style.background = "";
-    btn.style.boxShadow = "";
-    btn.style.color = "";
-}
-    
+    document.getElementById("startBtn").classList.toggle("active", out.start);
     document.getElementById("stopBtn").classList.toggle("active", out.stop);
     document.getElementById("releaseBtn").classList.toggle("active", out.release);
     document.getElementById("drainBtn").classList.toggle("active", out.drain);
-    document.getElementById("emergencyBtn").classList.toggle("active", out.emergency);
+    document.getElementById("emergencyBtn") .classList.toggle("active", out.emergency);
 
 });
