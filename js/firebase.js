@@ -73,7 +73,7 @@ onValue(statusRef, (snapshot) => {
 
     deviceStatus.textContent = "DEVICE NOT CONNECTED";
 
-    statusDot.style.background = "red";
+    statusDot.style.background = "#00ff66";
 
     statusDot.style.animation = "blink 1s infinite";
 
