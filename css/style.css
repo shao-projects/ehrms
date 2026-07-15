@@ -231,99 +231,72 @@ BUTTON GLOW EFFECT
 
 .controls button{
     transition:all .3s ease;
+    position:relative;
 }
 
 .controls button.active{
-    transform:scale(1.05);
-}
 
+    transform:scale(1.05);
+
+    box-shadow:
+        0 0 10px currentColor,
+        0 0 20px currentColor,
+        0 0 35px currentColor,
+        0 0 60px currentColor;
+
+}
 
 /* START */
 
 #startBtn.active{
 
     background:#00c853 !important;
-    color:white !important;
+    color:#00ff66 !important;
     border:2px solid #00ff66;
 
-    box-shadow:
-        0 0 10px #00ff66,
-        0 0 20px #00ff66,
-        0 0 35px #00ff66,
-        0 0 60px #00ff66;
-
 }
-
 
 /* STOP */
 
 #stopBtn.active{
 
-    background:#d50000 !important;
-    color:white !important;
-    border:2px solid #ff5555;
-
-    box-shadow:
-        0 0 10px red,
-        0 0 20px red,
-        0 0 35px red,
-        0 0 60px red;
+    background:#ff9800 !important;
+    color:#ffd54f !important;
+    border:2px solid #ffd54f;
 
 }
 
-
-/* RELEASE */
+/* RELEASE WATER */
 
 #releaseBtn.active{
 
-    background:#00bcd4 !important;
-    color:white !important;
-    border:2px solid cyan;
-
-    box-shadow:
-        0 0 10px cyan,
-        0 0 20px cyan,
-        0 0 35px cyan,
-        0 0 60px cyan;
+    background:#0288d1 !important;
+    color:#4fc3f7 !important;
+    border:2px solid #4fc3f7;
 
 }
 
-
-/* DRAIN */
+/* DRAIN SLUDGE */
 
 #drainBtn.active{
 
-    background:#ff9800 !important;
-    color:white !important;
-    border:2px solid orange;
-
-    box-shadow:
-        0 0 10px orange,
-        0 0 20px orange,
-        0 0 35px orange,
-        0 0 60px orange;
+    background:#7b1fa2 !important;
+    color:#ce93d8 !important;
+    border:2px solid #ce93d8;
 
 }
-
 
 /* EMERGENCY */
 
 #emergencyBtn.active{
 
-    background:#ff0000 !important;
-    color:white !important;
-    border:2px solid #ff8080;
+    background:#c62828 !important;
+    color:#ff5252 !important;
+    border:2px solid #ff5252;
 
-    animation:blinkEmergency .5s infinite;
-
-    box-shadow:
-        0 0 10px red,
-        0 0 20px red,
-        0 0 35px red,
-        0 0 60px red;
+    animation:blinkEmergency .6s infinite;
 
 }
-
 
 @keyframes blinkEmergency{
 
@@ -332,7 +305,7 @@ BUTTON GLOW EFFECT
     }
 
     50%{
-        opacity:.4;
+        opacity:.45;
     }
 
     100%{
