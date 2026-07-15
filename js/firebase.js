@@ -49,21 +49,11 @@ onValue(sensorRef, (snapshot) => {
     
 
     document.getElementById("ph").textContent = data.ph;
-
-    document.getElementById("tds").textContent =
-        data.tds + " ppm";
-
-    document.getElementById("turbidity").textContent =
-        data.turbidity + " NTU";
-
-    document.getElementById("voltage").textContent =
-        data.voltage + " V";
-
-    document.getElementById("current").textContent =
-        data.current + " A";
-
-    document.getElementById("power").textContent =
-        data.power + " W";
+    document.getElementById("tds").textContent = data.tds + " ppm";
+    document.getElementById("turbidity").textContent = data.turbidity + " NTU";
+    document.getElementById("voltage").textContent = data.voltage + " V";
+    document.getElementById("current").textContent = data.current + " A";
+    document.getElementById("power").textContent = data.power + " W";
 
 });
 
@@ -73,10 +63,8 @@ onValue(sensorRef, (snapshot) => {
 // ===============================
 
 const statusRef = ref(db, "ehrms/status");
-
 onValue(statusRef, (snapshot) => {
-
-    const status = snapshot.val();
+const status = snapshot.val();
 
     if (!status) return;
 
@@ -86,17 +74,14 @@ onValue(statusRef, (snapshot) => {
     if (status.online) {
 
         deviceStatus.textContent = "DEVICE ONLINE";
-
         statusDot.style.background = "#00ff66";
         statusDot.style.animation = "none";
 
     } else {
 
         deviceStatus.textContent = "DEVICE NOT CONNECTED";
-
         statusDot.style.background = "red";
         statusDot.style.animation = "blink 1s infinite";
-
     }
 
 });
