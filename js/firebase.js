@@ -130,4 +130,32 @@ document.getElementById("startBtn").addEventListener("click", () => {
 
     console.log("START COMMAND SENT");
 
+// ===============================
+// OUTPUT STATUS
+// ===============================
+
+const outputRef = ref(db, "ehrms/outputs");
+
+onValue(outputRef, (snapshot) => {
+
+    const out = snapshot.val();
+
+    if(!out) return;
+
+    document.getElementById("startBtn")
+        .classList.toggle("active", out.start);
+
+    document.getElementById("stopBtn")
+        .classList.toggle("active", out.stop);
+
+    document.getElementById("releaseBtn")
+        .classList.toggle("active", out.release);
+
+    document.getElementById("drainBtn")
+        .classList.toggle("active", out.drain);
+
+    document.getElementById("emergencyBtn")
+        .classList.toggle("active", out.emergency);
+
+    
 });
