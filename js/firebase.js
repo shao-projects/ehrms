@@ -100,25 +100,50 @@ const status = snapshot.val();
 
 const controlRef = ref(db, "ehrms/control");
 
-
 // ===============================
-// START BUTTON
+// SEND COMMAND
 // ===============================
+function sendCommand(command){
 
-document.getElementById("startBtn").addEventListener("click", () => {
+    update(controlRef,{
 
-    update(controlRef, {
-
-        start: true,
+        start: false,
         stop: false,
         release: false,
         drain: false,
-        emergency: false
+        emergency: false,
+
+        [command]: true
 
     });
 
-    console.log("START COMMAND SENT");
+    console.log(command.toUpperCase() + " COMMAND SENT");
+}
 
+
+// START
+document.getElementById("startBtn").addEventListener("click", () => {
+sendCommand("start");
+});
+
+// STOP
+document.getElementById("stopBtn").addEventListener("click", () => {
+sendCommand("stop");
+});
+
+// RELEASE WATER
+document.getElementById("releaseBtn").addEventListener("click", () => {
+sendCommand("release");
+
+});
+// DRAIN SLUDGE
+document.getElementById("drainBtn").addEventListener("click", () => {
+sendCommand("drain");
+
+});
+// EMERGENCY STOP
+document.getElementById("emergencyBtn").addEventListener("click", () => {
+sendCommand("emergency");
 });  
 
 // ===============================
