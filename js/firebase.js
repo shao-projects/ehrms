@@ -142,7 +142,10 @@ onValue(outputRef, (snapshot) => {
     console.log("OUTPUT DATA:", out);
     if (!out) return;
 
-const btn = document.getElementById("startBtn");console.log(btn);btn.classList.toggle("active", out.start);console.log(btn.className);
+const btn = document.getElementById("startBtn");console.log(typeof out.start, out.start); if (out.start === true) { btn.classList.add("active");
+} else {
+btn.classList.remove("active");
+}
     
     document.getElementById("stopBtn").classList.toggle("active", out.stop);
     document.getElementById("releaseBtn").classList.toggle("active", out.release);
