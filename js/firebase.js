@@ -213,3 +213,23 @@ onValue(logRef,(snapshot)=>{
     log.last;
 });
 
+
+
+// ===============================
+// START SIMULATION
+// ===============================
+async function startSimulation(){
+    await update(ref(db,"ehrms/process"),{
+        state:"INITIALIZING...",
+        progress:5
+
+    });
+
+    await update(ref(db,"ehrms/logs"),{
+    last:"System Initializing..."
+
+    });
+
+    console.log("Simulation Started");
+
+}
