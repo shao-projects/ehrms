@@ -142,9 +142,18 @@ onValue(outputRef, (snapshot) => {
     console.log("OUTPUT DATA:", out);
     if (!out) return;
 
-const btn = document.getElementById("startBtn");console.log(typeof out.start, out.start); if (out.start === true) { btn.classList.add("active");
+const btn = document.getElementById("startBtn");
+if (out.start === true) {
+
+    btn.style.background = "lime";
+    btn.style.boxShadow = "0 0 60px lime";
+    btn.style.color = "black";
+
 } else {
-btn.classList.remove("active");
+
+    btn.style.background = "";
+    btn.style.boxShadow = "";
+    btn.style.color = "";
 }
     
     document.getElementById("stopBtn").classList.toggle("active", out.stop);
