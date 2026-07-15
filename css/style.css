@@ -224,4 +224,107 @@ flex-direction:column;
 
 }
 
+/*==========================
+BUTTON GLOW EFFECT
+==========================*/
+
+.controls button{
+
+    transition:0.3s;
+
+}
+
+.controls button.active{
+
+    transform:scale(1.05);
+
+}
+
+/* START */
+
+#startBtn.active{
+
+    background:#00c853;
+
+    color:white;
+
+    box-shadow:
+    0 0 10px #00ff66,
+    0 0 20px #00ff66,
+    0 0 35px #00ff66;
+
+}
+
+/* STOP */
+
+#stopBtn.active{
+
+    background:#d50000;
+
+    color:white;
+
+    box-shadow:
+    0 0 10px red,
+    0 0 20px red,
+    0 0 35px red;
+
+}
+
+/* RELEASE */
+
+#releaseBtn.active{
+
+    background:#00bcd4;
+
+    color:white;
+
+    box-shadow:
+    0 0 10px cyan,
+    0 0 20px cyan,
+    0 0 35px cyan;
+
+}
+
+/* DRAIN */
+
+#drainBtn.active{
+
+    background:#ff9800;
+
+    color:white;
+
+    box-shadow:
+    0 0 10px orange,
+    0 0 20px orange,
+    0 0 35px orange;
+
+}
+
+/* EMERGENCY */
+
+#emergencyBtn.active{
+
+    background:#ff0000;
+
+    color:white;
+
+    animation:blinkEmergency .6s infinite;
+
+    box-shadow:
+    0 0 10px red,
+    0 0 20px red,
+    0 0 35px red;
+
+}
+
+@keyframes blinkEmergency{
+
+0%{opacity:1;}
+
+50%{opacity:.4;}
+
+100%{opacity:1;}
+    
+
+}    
 }
