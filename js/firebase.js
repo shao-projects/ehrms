@@ -30,16 +30,20 @@ const firebaseConfig = {
 // ===============================
 // Initialize Firebase
 // ===============================
-
 const app = initializeApp(firebaseConfig);
 const db = getDatabase(app);
 console.log("Firebase Connected");
 
 
 // ===============================
+// SIMULATION MODE
+// ===============================
+const SIMULATION_MODE = true;
+
+
+// ===============================
 // SENSOR MONITORING
 // ===============================
-
 const sensorRef = ref(db, "ehrms/sensors");
 onValue(sensorRef, (snapshot) => {
 
@@ -166,3 +170,4 @@ onValue(logRef,(snapshot)=>{
     document.getElementById("logBox").innerHTML=
     log.last;
 });
+
