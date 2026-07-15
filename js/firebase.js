@@ -44,6 +44,7 @@ const sensorRef = ref(db, "ehrms/sensors");
 onValue(sensorRef, (snapshot) => {
 
     const data = snapshot.val();
+    console.log(data);
 
     if (!data) return;
     
