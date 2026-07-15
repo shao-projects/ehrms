@@ -17,7 +17,7 @@ import {
 // ===============================
 
 const firebaseConfig = {
-    apiKey: "AIzaSyANeNIeM-PTlPu2UHWv1k2AKbJQMNa3-g",
+    apiKey: "AIzaSyANeNIeM-PTlPu2UHWv1k2AKbJgQMNa3-g",
     authDomain: "iot-projects-8b62e.firebaseapp.com",
     databaseURL: "https://iot-projects-8b62e-default-rtdb.firebaseio.com",
     projectId: "iot-projects-8b62e",
@@ -129,6 +129,8 @@ document.getElementById("startBtn").addEventListener("click", () => {
     });
 
     console.log("START COMMAND SENT");
+     });
+
 
 // ===============================
 // OUTPUT STATUS
