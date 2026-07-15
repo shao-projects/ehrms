@@ -142,7 +142,8 @@ onValue(outputRef, (snapshot) => {
     console.log("OUTPUT DATA:", out);
     if (!out) return;
 
-    document.getElementById("startBtn").classList.toggle("active", out.start);
+const btn = document.getElementById("startBtn");console.log(btn);btn.classList.toggle("active", out.start);console.log(btn.className);
+    
     document.getElementById("stopBtn").classList.toggle("active", out.stop);
     document.getElementById("releaseBtn").classList.toggle("active", out.release);
     document.getElementById("drainBtn").classList.toggle("active", out.drain);
