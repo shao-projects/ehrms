@@ -48,6 +48,10 @@ onValue(sensorRef, (snapshot) => {
     const data = snapshot.val();
 
     if (!data) return;
+    if (!out) return;
+
+    document.getElementById("startBtn")
+        .classList.toggle("active", out.start);
 
     console.log(data);
 
