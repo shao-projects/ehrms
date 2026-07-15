@@ -136,3 +136,27 @@ onValue(outputRef, (snapshot) => {
     document.getElementById("emergencyBtn").classList.toggle("active", out.emergency);
 
 });
+
+
+// ===============================
+// TREATMENT STATUS
+// ===============================
+
+const processRef = ref(db, "ehrms/process");
+
+onValue(processRef, (snapshot)=>{
+
+    const process = snapshot.val();
+
+    if(!process) return;
+
+    document.getElementById("treatmentStatus").textContent =
+    process.state;
+
+    document.getElementById("progressBar").style.width =
+    process.progress + "%";
+
+    document.getElementById("progressText").textContent =
+    process.progress + "%";
+
+});
