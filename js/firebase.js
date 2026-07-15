@@ -76,6 +76,7 @@ onValue(statusRef, (snapshot) => {
     statusDot.style.background = "#00ff66";
 
     statusDot.style.animation = "blink 1s infinite";
+     }
 
 // ===============================
 // CONTROL REFERENCE
@@ -83,6 +84,22 @@ onValue(statusRef, (snapshot) => {
 
 const controlRef = ref(db, "ehrms/control");
 
+// ===============================
+// START BUTTON
+// ===============================
 
- } 
+document.getElementById("startBtn").addEventListener("click", () => {
+
+    update(controlRef, {
+
+        start: true,
+        stop: false,
+        release: false,
+        drain: false,
+        emergency: false
+
+    });
+
+    console.log("START COMMAND SENT");
+
 });
