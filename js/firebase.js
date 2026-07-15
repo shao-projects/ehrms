@@ -22,11 +22,18 @@ console.log("Firebase Connected");
 // Reference sa sensors
 const sensorRef = ref(db, "ehrms/sensors");
 
-// Basahin ang sensors value
+// Basahin ang data nang real-time
 onValue(sensorRef, (snapshot) => {
 
-    console.log("Snapshot exists:", snapshot.exists());
+    const data = snapshot.val();
 
-    console.log("Snapshot value:", snapshot.val());
+    console.log(data);
+
+    document.getElementById("ph").innerHTML = data.ph;
+    document.getElementById("tds").innerHTML = data.tds + " ppm";
+    document.getElementById("turbidity").innerHTML = data.turbidity + " NTU";
+    document.getElementById("voltage").innerHTML = data.voltage + " V";
+    document.getElementById("current").innerHTML = data.current + " A";
+    document.getElementById("power").innerHTML = data.power + " W";
 
 });
