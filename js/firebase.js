@@ -136,13 +136,10 @@ document.getElementById("startBtn").addEventListener("click", () => {
 // OUTPUT STATUS
 // ===============================
 const outputRef = ref(db, "ehrms/outputs");
-
 onValue(outputRef, (snapshot) => {
 
     const out = snapshot.val();
-
     console.log("OUTPUT DATA:", out);
-
     if (!out) return;
 
     document.getElementById("startBtn").classList.toggle("active", out.start);
