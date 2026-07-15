@@ -50,10 +50,6 @@ onValue(sensorRef, (snapshot) => {
     console.table(data);
     console.groupEnd();
 
-    console.group("OUTPUTS");
-    console.table(out);
-    console.groupEnd();
-    
 
     document.getElementById("ph").textContent = data.ph;
     document.getElementById("tds").textContent = data.tds + " ppm";
@@ -130,8 +126,10 @@ const outputRef = ref(db, "ehrms/outputs");
 onValue(outputRef, (snapshot) => {
 
     const out = snapshot.val();
-
     if (!out) return;
+    console.group("OUTPUTS");
+    console.table(out);
+    console.groupEnd();
 
     document.getElementById("startBtn").classList.toggle("active", out.start);
     document.getElementById("stopBtn").classList.toggle("active", out.stop);
