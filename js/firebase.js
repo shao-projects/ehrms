@@ -46,4 +46,35 @@ onValue(sensorRef, (snapshot) => {
     document.getElementById("power").textContent =
     data.power + " W";
 
+ // ===============================
+// DEVICE STATUS
+// ===============================
+
+const statusRef = ref(db, "ehrms/status");
+
+onValue(statusRef, (snapshot) => {
+
+    const status = snapshot.val();
+
+    if (!status) return;
+
+    const deviceStatus = document.getElementById("deviceStatus");
+    const statusDot = document.getElementById("statusDot");
+
+    if (status.online) {
+
+        deviceStatus.textContent = "DEVICE ONLINE";
+
+        statusDot.style.background = "#00ff66";
+
+    } else {
+
+        deviceStatus.textContent = "DEVICE NOT CONNECTED";
+
+        statusDot.style.background = "#ffc107";
+
+    }
+
+}); 
+
 });
