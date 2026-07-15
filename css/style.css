@@ -243,15 +243,10 @@ BUTTON GLOW EFFECT
 /* START */
 
 #startBtn.active{
-
-    background:#00c853;
-
-    color:white;
-
-    box-shadow:
-    0 0 10px #00ff66,
-    0 0 20px #00ff66,
-    0 0 35px #00ff66;
+background: lime !important;
+color: black !important;
+border: 4px solid yellow !important;
+box-shadow: 0 0 40px lime !important;
 
 }
 
