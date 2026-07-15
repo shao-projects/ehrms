@@ -129,8 +129,8 @@ document.getElementById("startBtn").addEventListener("click", () => {
     });
 
     console.log("START COMMAND SENT");
-     });
 
+});   // <-- ito ang kulang
 
 // ===============================
 // OUTPUT STATUS
@@ -142,22 +142,12 @@ onValue(outputRef, (snapshot) => {
 
     const out = snapshot.val();
 
-    if(!out) return;
+    if (!out) return;
 
-    document.getElementById("startBtn")
-        .classList.toggle("active", out.start);
+    document.getElementById("startBtn").classList.toggle("active", out.start);
+    document.getElementById("stopBtn").classList.toggle("active", out.stop);
+    document.getElementById("releaseBtn").classList.toggle("active", out.release);
+    document.getElementById("drainBtn").classList.toggle("active", out.drain);
+    document.getElementById("emergencyBtn").classList.toggle("active", out.emergency);
 
-    document.getElementById("stopBtn")
-        .classList.toggle("active", out.stop);
-
-    document.getElementById("releaseBtn")
-        .classList.toggle("active", out.release);
-
-    document.getElementById("drainBtn")
-        .classList.toggle("active", out.drain);
-
-    document.getElementById("emergencyBtn")
-        .classList.toggle("active", out.emergency);
-
-    
 });
