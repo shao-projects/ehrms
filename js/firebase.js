@@ -255,7 +255,7 @@ const minutes=parseInt(document.getElementById("treatmentTime").value);
     treatment_time: minutes
 })
 .then(() => {
-    alert("Treatment Time Saved Successfully!");
+    console.log("Treatment Time Saved Successfully!");
 })
 .catch((error) => {
     console.error(error);
