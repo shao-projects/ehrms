@@ -261,3 +261,5 @@ const minutes=parseInt(document.getElementById("treatmentTime").value);
     console.error(error);
     alert("Failed to save settings.");
 });
+
+});
