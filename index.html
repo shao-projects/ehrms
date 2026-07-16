@@ -42,33 +42,33 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
 
 <!-- SENSOR SECTION -->
 <section class="cards">
-<div class="card">
   
+<div class="card"> 
 <h3>pH</h3>
 <h2 id="ph">0.00</h2>
 </div>
-<div class="card">
   
+<div class="card">
 <h3>TDS</h3>
 <h2 id="tds">0 ppm</h2>
 </div>
-<div class="card">
   
+<div class="card">
 <h3>Turbidity</h3>
 <h2 id="turbidity">0 NTU</h2>
 </div>
-<div class="card">
   
+<div class="card">
 <h3>Voltage</h3>
 <h2 id="voltage">0.00 V</h2>
 </div>
+  
 <div class="card">
-
 <h3>Current</h3>
 <h2 id="current">0.00 A</h2>
 </div>
+  
 <div class="card">
-
 <h3>Power</h3>
 <h2 id="power">0.00 W</h2>
 </div>
@@ -134,23 +134,22 @@ EMERGENCY STOP
 <!-- SYSTEM SETTINGS -->
 
 <section class="panel">
-<h2>System Settings</h2>
+    <h2>System Settings</h2>
+    <label for="treatmentTime">
+        Treatment Time (Minutes)
+    </label>
 
-<label for="treatmentTime">
-Treatment Time (Minutes)
-</label>
+    <input
+        type="number"
+        id="treatmentTime"
+        min="1"
+        max="120"
+        value="15"
+    >
 
-<input
-    type="number"
-    id="treatmentTime"
-    min="1"
-    max="120"
-    value="15"
->
-
-<button id="saveSettingsBtn">
-SAVE SETTINGS
-</button>
+    <button id="saveSettingsBtn">
+        SAVE SETTINGS
+    </button>
 
 </section>
 
