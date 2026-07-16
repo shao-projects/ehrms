@@ -210,6 +210,8 @@ button:hover{
 #treatmentTime{
 
     width:100%;
+    box-sizing:border-box;
+
     padding:10px;
     margin-top:10px;
     margin-bottom:15px;
@@ -227,6 +229,8 @@ button:hover{
 #saveSettingsBtn{
 
     width:100%;
+    box-sizing:border-box;
+
     padding:12px;
 
     background:#00b894;
@@ -241,13 +245,6 @@ button:hover{
     font-weight:bold;
 
 }
-
-#saveSettingsBtn:hover{
-
-    background:#00d9a3;
-
-}
-
 
 
 
@@ -353,13 +350,10 @@ BUTTON GLOW EFFECT
     0%{
         opacity:1;
     }
-
     50%{
         opacity:.45;
     }
-
     100%{
         opacity:1;
     }
-
 }
