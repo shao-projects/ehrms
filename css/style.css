@@ -9,6 +9,7 @@ body{
     background:#0f172a;
     color:white;
     overflow-x:hidden;
+    width:100%;
 }
 
 header{
@@ -70,12 +71,12 @@ header{
     }
 
 }
-
 .container{
     width:95%;
     max-width:1400px;
     margin:auto;
     margin-top:20px;
+    overflow:hidden;
 }
 
 .cards{
