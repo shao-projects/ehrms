@@ -99,6 +99,7 @@ const status = snapshot.val();
 // ===============================
 
 const controlRef = ref(db, "ehrms/control");
+const settingsRef = ref(db,"ehrms/settings");
 
 // ===============================
 // SEND COMMAND
@@ -213,6 +214,20 @@ onValue(logRef,(snapshot)=>{
     log.last;
 });
 
+// ===============================
+// SYSTEM SETTINGS
+// ===============================
+
+onValue(settingsRef,(snapshot)=>{
+
+    const settings=snapshot.val();
+
+    if(!settings) return;
+
+    document.getElementById("treatmentTime").value=
+    settings.treatment_time;
+
+});
 
 
 // ===============================
@@ -231,5 +246,13 @@ async function startSimulation(){
     });
 
     console.log("Simulation Started");
-
 }
+
+document.getElementById("saveSettingsBtn").addEventListener("click",()=>{
+const minutes=parseInt(document.getElementById("treatmentTime").value);
+    update(settingsRef,{
+    treatment_time:minutes
+    });
+    console.log("Treatment Time Saved:",minutes);
+
+});
