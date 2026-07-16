@@ -206,6 +206,56 @@ button:hover{
     font-family:Consolas;
 }
 
+
+#treatmentTime{
+
+    width:100%;
+    padding:10px;
+    margin-top:10px;
+    margin-bottom:15px;
+
+    background:#1b263b;
+    color:white;
+
+    border:1px solid #00bcd4;
+    border-radius:8px;
+
+    font-size:18px;
+
+}
+
+#saveSettingsBtn{
+
+    width:100%;
+    padding:12px;
+
+    background:#00b894;
+    color:white;
+
+    border:none;
+    border-radius:8px;
+
+    cursor:pointer;
+
+    font-size:16px;
+    font-weight:bold;
+
+}
+
+#saveSettingsBtn:hover{
+
+    background:#00d9a3;
+
+}
+
+
+
+
+
+
+
+
+
 /* ==========================
    RESPONSIVE
 ========================== */
