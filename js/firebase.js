@@ -250,9 +250,14 @@ async function startSimulation(){
 
 document.getElementById("saveSettingsBtn").addEventListener("click",()=>{
 const minutes=parseInt(document.getElementById("treatmentTime").value);
-    update(settingsRef,{
-    treatment_time:minutes
-    });
-    console.log("Treatment Time Saved:",minutes);
-
+    
+  update(settingsRef,{
+    treatment_time: minutes
+})
+.then(() => {
+    alert("Treatment Time Saved Successfully!");
+})
+.catch((error) => {
+    console.error(error);
+    alert("Failed to save settings.");
 });
